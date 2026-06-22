@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatty</title>
+    <title>{{ isset($title) ? $title : 'Chatty' }}</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -90,13 +90,13 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center">
 
                     <li class="nav-item">
-                        <a href="/login" class="nav-link">
+                        <a href="{{ route('login') }}" class="nav-link">
                             Login
                         </a>
                     </li>
 
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                        <a href="/register" class="btn btn-primary btn-auth">
+                        <a href="{{ route('register') }}" class="btn btn-primary btn-auth">
                             Register
                         </a>
                     </li>

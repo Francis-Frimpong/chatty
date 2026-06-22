@@ -1,6 +1,8 @@
 <x-guestlayout>
 
-
+    <x-slot:title>
+        Login
+    </x-slot:title>
   
 
 <div class="card auth-card">
@@ -57,7 +59,7 @@
             <span class="text-muted">
                 Don't have an account?
             </span>
-            <a href="register.html" class="text-decoration-none">
+            <a href="{{ route('register') }}" class="text-decoration-none">
                 Register
             </a>
         </div>
