@@ -8,20 +8,21 @@
     <div class="card-body p-4 p-md-5">
 
         <div class="text-center mb-4">
-            <div class="logo-circle mb-3">M</div>
+            <div class="logo-circle mb-3">C</div>
             <h2 class="fw-bold">Create Account</h2>
             <p class="text-muted mb-0">
                 Join the messaging platform
             </p>
         </div>
 
-        <form>
-
+        <form action="POST" method="{{  }}">
+            @csrf
             <div class="mb-3">
                 <label class="form-label">Full Name</label>
                 <input
                     type="text"
                     class="form-control"
+                    name="name"
                     placeholder="Enter full name">
             </div>
 
@@ -30,6 +31,7 @@
                 <input
                     type="email"
                     class="form-control"
+                    name="email"
                     placeholder="Enter email">
             </div>
 
@@ -38,6 +40,7 @@
                 <input
                     type="password"
                     class="form-control"
+                    name="password"
                     placeholder="Create password">
             </div>
 
@@ -46,6 +49,7 @@
                 <input
                     type="password"
                     class="form-control"
+                    name="confirm_password"
                     placeholder="Confirm password">
             </div>
 

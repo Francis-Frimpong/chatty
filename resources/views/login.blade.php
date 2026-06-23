@@ -16,8 +16,8 @@
             </p>
         </div>
 
-        <form>
-
+        <form method="POST" action="{{  }}">
+            @csrf
             <div class="mb-3">
                 <label class="form-label">Email Address</label>
                 <input
