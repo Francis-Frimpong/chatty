@@ -15,7 +15,7 @@
             </p>
         </div>
 
-        <form action="POST" method="{{  }}">
+        <form action="POST" method="{{route('register') }}">
             @csrf
             <div class="mb-3">
                 <label class="form-label">Full Name</label>
