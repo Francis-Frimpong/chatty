@@ -15,7 +15,7 @@
             </p>
         </div>
 
-        <form action="POST" method="{{route('register') }}">
+        <form action="{{ route('register') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label class="form-label">Full Name</label>
@@ -49,11 +49,11 @@
                 <input
                     type="password"
                     class="form-control"
-                    name="confirm_password"
+                    name="password_confirmation"
                     placeholder="Confirm password">
             </div>
 
-            <button class="btn btn-primary w-100 py-2">
+            <button type="submit" class="btn btn-primary w-100 py-2">
                 Create Account
             </button>
 

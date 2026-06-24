@@ -24,9 +24,6 @@ class User extends Authenticatable
         'password',
     ];
 
-    protected $hide = ['password', 'remember_token'];
-
-    protected $casts = ['password' => 'hashed'];
 
     /**
      * The attributes that should be hidden for serialization.
