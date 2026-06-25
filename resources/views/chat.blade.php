@@ -54,27 +54,42 @@
   <div class="row h-100">
 
     <!-- Sidebar -->
-    <div class="col-4 col-md-3 sidebar p-3">
-      <h5>Chats</h5>
-      <div class="list-group">
+   <!-- Sidebar -->
+<div class="col-4 col-md-3 border-end p-0">
 
-        <a href="#" class="list-group-item list-group-item-action active">
-          John Doe
-          <br><small>Last message preview...</small>
-        </a>
+  <!-- Sidebar Header -->
+  <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+    <h6 class="mb-0">Chats</h6>
 
-        <a href="#" class="list-group-item list-group-item-action">
-          Jane Smith
-          <br><small>Hello there!</small>
-        </a>
+    <form action="{{ route('logout') }}" method="POST" class="m-0">
+      @csrf
+      <button type="submit" class="btn btn-outline-danger btn-sm">
+        Logout
+      </button>
+    </form>
+  </div>
 
-        <a href="#" class="list-group-item list-group-item-action">
-          Alex
-          <br><small>See you later</small>
-        </a>
+  <!-- Contact List -->
+  <div class="list-group list-group-flush">
 
-      </div>
-    </div>
+    <a href="#" class="list-group-item list-group-item-action active">
+      John Doe
+      <br><small>Last message preview...</small>
+    </a>
+
+    <a href="#" class="list-group-item list-group-item-action">
+      Jane Smith
+      <br><small>Hello there!</small>
+    </a>
+
+    <a href="#" class="list-group-item list-group-item-action">
+      Alex
+      <br><small>See you later</small>
+    </a>
+
+  </div>
+
+</div>
 
     <!-- Chat Area -->
     <div class="col-8 col-md-9 chat-area">
