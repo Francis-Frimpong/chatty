@@ -23,6 +23,7 @@
                 <input
                     type="email"
                     class="form-control"
+                    name="email"
                     placeholder="Enter email">
             </div>
 
@@ -31,6 +32,7 @@
                 <input
                     type="password"
                     class="form-control"
+                    name="password"
                     placeholder="Enter password">
             </div>
 
@@ -38,7 +40,9 @@
                 <div class="form-check">
                     <input
                         class="form-check-input"
+                        name="remember"
                         type="checkbox">
+                        
                     <label class="form-check-label">
                         Remember me
                     </label>
