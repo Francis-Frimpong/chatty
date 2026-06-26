@@ -4,49 +4,8 @@
   <meta charset="UTF-8">
   <title>Chat UI</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      height: 100vh;
-      overflow: hidden;
-    }
-    .chat-container {
-      height: 100vh;
-    }
-    .sidebar {
-      border-right: 1px solid #ddd;
-      height: 100%;
-      overflow-y: auto;
-    }
-    .chat-area {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    .messages {
-      flex: 1;
-      overflow-y: auto;
-      padding: 15px;
-      background: #f8f9fa;
-    }
-    .message {
-      max-width: 60%;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .sent {
-      background: #0d6efd;
-      color: white;
-      margin-left: auto;
-    }
-    .received {
-      background: #e9ecef;
-    }
-    .chat-input {
-      border-top: 1px solid #ddd;
-      padding: 10px;
-    }
-  </style>
+
+  @vite('resources/js/app.js')
 </head>
 <body>
 
