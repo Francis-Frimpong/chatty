@@ -30,21 +30,15 @@
 
     <!-- Contact List -->
     <div class="list-group list-group-flush">
+      @foreach ($users as $user )
+        <a href="#" class="list-group-item list-group-item-action active">
+          {{ $user->name }}
+          <br><small>Last message preview...</small>
+        </a>
+        
+      @endforeach
 
-      <a href="#" class="list-group-item list-group-item-action active">
-        John Doe
-        <br><small>Last message preview...</small>
-      </a>
-
-      <a href="#" class="list-group-item list-group-item-action">
-        Jane Smith
-        <br><small>Hello there!</small>
-      </a>
-
-      <a href="#" class="list-group-item list-group-item-action">
-        Alex
-        <br><small>See you later</small>
-      </a>
+     
 
     </div>
 

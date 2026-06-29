@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 class ChatController extends Controller
 {
@@ -11,7 +13,9 @@ class ChatController extends Controller
      */
     public function index()
     {
-        return view('chat');
+        // display all registerd user except the login user.
+        $users = User::where('id', '!=', auth()->id())->get();
+        return view('chat', compact('users'));
     }
 
     /**

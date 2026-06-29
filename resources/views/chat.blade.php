@@ -1,4 +1,4 @@
-<x-userlayout>
+<x-userlayout :users="$users">
    <!-- Header -->
       <div class="p-3 border-bottom">
         <h6 class="mb-0">John Doe</h6>
