@@ -1,31 +1,81 @@
-<x-userlayout :users="$users">
-   <!-- Header -->
-      <div class="p-3 border-bottom">
-        <h6 class="mb-0">John Doe</h6>
-      </div>
+<x-userlayout>
 
-      <!-- Messages -->
-      <div class="messages">
+<div class="row h-100">
 
+  <!-- Sidebar -->
+  <div class="col-4 col-md-3 border-end p-0">
+
+    <!-- Sidebar Header -->
+    <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+      <h6 class="mb-0">Chats</h6>
+
+      <form action="{{ route('logout') }}" method="POST" class="m-0">
+        @csrf
+        <button type="submit" class="btn btn-outline-danger btn-sm">
+          Logout
+        </button>
+      </form>
+    </div>
+
+    <!-- Contact List -->
+    <div class="list-group list-group-flush">
+      @foreach ($users as $user)
+
+        <a href="{{ route('chat.show', $user->id) }}"
+           class="list-group-item list-group-item-action
+           {{ $activeUser && $activeUser->id == $user->id ? 'active' : '' }}">
+
+          {{ $user->name }}
+          <br>
+          <small>Last message preview...</small>
+
+        </a>
+
+      @endforeach
+    </div>
+
+  </div>
+
+
+  <!-- Chat Area -->
+  <div class="col-8 col-md-9 chat-area">
+
+    <!-- Chat Header (SELECTED USER) -->
+    <div class="p-3 border-bottom">
+      <h6 class="mb-0">
+        {{ $activeUser?->name ?? 'Select a chat' }}
+      </h6>
+    </div>
+
+    <!-- Messages -->
+    <div class="messages p-3">
+
+      @if($activeUser)
         <div class="message received">
-          Hello! How are you?
+          Hello! This is a chat with {{ $activeUser->name }}.
         </div>
 
         <div class="message sent">
-          I'm good! How about you?
+          Hi 👋
         </div>
-
-        <div class="message received">
-          Doing great!
+      @else
+        <div class="text-muted text-center mt-5">
+          Select a user to start chatting
         </div>
+      @endif
 
-      </div>
+    </div>
 
-      <!-- Input -->
-      <div class="chat-input">
-        <form class="d-flex">
-          <input type="text" class="form-control me-2" placeholder="Type a message...">
-          <button class="btn btn-primary">Send</button>
-        </form>
-      </div>
+    <!-- Input -->
+    <div class="chat-input p-3 border-top">
+      <form class="d-flex">
+        <input type="text" class="form-control me-2" placeholder="Type a message...">
+        <button class="btn btn-primary">Send</button>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
 </x-userlayout>

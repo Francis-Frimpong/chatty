@@ -15,6 +15,7 @@ Route::middleware('guest')->group(function () {
 
 // Protected routes (logged-in users only)
 Route::middleware('auth')->group(function () {
-    Route::get('/chat', [ChatController::class, 'index'])->name('chat');
+    Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+    Route::get('/chat/{id}',[ChatController::class, 'show'])->name('chat.show');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

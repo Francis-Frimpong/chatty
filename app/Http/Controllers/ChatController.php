@@ -15,16 +15,13 @@ class ChatController extends Controller
     {
         // display all registerd user except the login user.
         $users = User::where('id', '!=', auth()->id())->get();
-        return view('chat', compact('users'));
+
+        $activeUser = null;
+        
+        return view('chat', compact('users', 'activeUser'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -39,30 +36,34 @@ class ChatController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $activeUser = User::findOrFail($id);
+
+        $users = User::where('id', '!=', auth()->id())->get();
+
+        return view('chat', compact('users', 'activeUser'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    // public function edit(string $id)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  */
+    // public function update(Request $request, string $id)
+    // {
+    //     //
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    // /**
+    //  * Remove the specified resource from storage.
+    //  */
+    // public function destroy(string $id)
+    // {
+    //     //
+    // }
 }
